@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+description = 'OpenTelemetry Examples for Jaeger Backend'
+ext.moduleName = "io.opentelemetry.examples.jaeger"
+
+dependencies {
+    implementation 'io.opentelemetry:opentelemetry-api:1.20.1'
+    implementation 'io.opentelemetry:opentelemetry-sdk:1.20.1'
+    implementation 'io.opentelemetry:opentelemetry-exporter-otlp:1.20.1'
+    implementation 'io.opentelemetry:opentelemetry-semconv:1.20.1-alpha'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+}
+
+test {
+    useJUnitPlatform()
+}
